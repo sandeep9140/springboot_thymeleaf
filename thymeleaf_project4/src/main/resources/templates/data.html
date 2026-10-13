@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	
+	<head>
+		<title>this is my student portal</title>
+	</head>
+	<body>
+		<h1>This is my table</h1>
+		
+		<table>
+			<tr>
+				<th>Name : </th>
+				<th>AGE :</th>
+				
+			</tr>
+			
+			<tr th:each="s : ${stu}">
+				<td th:text="${s.name}"></td>
+				<td th:text="${s.age}"></td>
+								
+			</tr>
+			
+		</table>
+	</body>
+</html>
