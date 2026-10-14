@@ -202,3 +202,139 @@ Continuously learning and building my skills in Java, Spring Boot, Thymeleaf, an
 More concepts and practical examples coming soon!
 
 #Java #SpringBoot #Thymeleaf #JavaFullStack #WebDevelopment #LearningJourney
+
+
+
+
+
+=============================================================================
+
+
+
+# 📘 Day 21: Thymeleaf with Spring Boot
+
+Today, I learned important Thymeleaf features used to create dynamic, conditional, and reusable HTML pages in Spring Boot applications.
+
+## 📚 Topics Covered
+
+### 1. Iteration Status — `status.first` and `status.last`
+
+Used with `th:each` to identify the first and last elements while iterating over a collection.
+
+```html
+<ul>
+    <li th:each="student, status : ${students}">
+        <span th:text="${student}"></span>
+
+        <span th:if="${status.first}">
+            - First Student
+        </span>
+
+        <span th:if="${status.last}">
+            - Last Student
+        </span>
+    </li>
+</ul>
+```
+
+**Key Learning:**
+- `status.first` returns `true` for the first element.
+- `status.last` returns `true` for the last element.
+
+### 2. Conditional Rendering — `th:if` and `th:unless`
+
+Used to display HTML elements based on a condition.
+
+```html
+<p th:if="${isLoggedIn}">
+    Welcome Back!
+</p>
+
+<p th:unless="${isLoggedIn}">
+    Please Login First.
+</p>
+```
+
+**Key Learning:**
+- `th:if` displays an element when its condition is true.
+- `th:unless` displays an element when its condition is false.
+
+### 3. Elvis Operator — `?:`
+
+Used to provide a default value when an expression evaluates to `null`.
+
+```html
+<p th:text="${userName} ?: 'Guest'">
+    Guest
+</p>
+```
+
+**Key Learning:** The Elvis operator helps handle missing or null values and display fallback content.
+
+### 4. Switch and Case — `th:switch` and `th:case`
+
+Used to select content based on the value of an expression.
+
+```html
+<div th:switch="${role}">
+    <p th:case="'ADMIN'">Welcome Admin!</p>
+    <p th:case="'USER'">Welcome User!</p>
+    <p th:case="*">Unknown Role</p>
+</div>
+```
+
+**Key Learning:**
+- `th:switch` defines the expression to evaluate.
+- `th:case` matches a specific value.
+- `th:case="*"` acts as the default case.
+
+### 5. Thymeleaf Fragments
+
+Fragments allow us to reuse common HTML components such as headers, navigation bars, and footers across multiple pages.
+
+**`fragments/header.html`**
+
+```html
+<header th:fragment="pageHeader">
+    <h2>My Spring Boot Application</h2>
+</header>
+```
+
+**Using `th:replace`**
+
+```html
+<div th:replace="~{fragments/header :: pageHeader}"></div>
+```
+
+**Key Learning:**
+
+| Attribute | Purpose |
+|---|---|
+| `th:replace` | Replaces the host element with the fragment |
+| `th:insert` | Inserts the fragment inside the host element |
+| `th:include` | Legacy attribute; deprecated in modern Thymeleaf |
+
+## 💡 What I Learned Today
+
+- How to detect the first and last elements in a loop.
+- How to conditionally display HTML elements.
+- How to provide fallback values using the Elvis operator.
+- How to implement switch-case logic in templates.
+- How to create reusable HTML fragments in Thymeleaf.
+- How to write cleaner and more maintainable Spring Boot web pages.
+
+## 🛠️ Technologies Used
+
+- Java
+- Spring Boot
+- Thymeleaf
+- HTML
+- Maven
+
+## 🎯 Learning Goal
+
+My goal is to strengthen my Java Full Stack Development skills by learning Spring Boot and Thymeleaf through practical examples and regular coding practice.
+
+**Day 21 Completed ✅**
+
+#Java #SpringBoot #Thymeleaf #JavaFullStack #WebDevelopment #100DaysOfCode #LearningInPublic
