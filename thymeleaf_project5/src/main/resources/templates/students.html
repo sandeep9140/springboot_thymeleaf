@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+	<head>
+		<title>hello welcome</title>
+	</head>
+	
+	<body>
+		<h1>this my student page</h1>
+		<table>
+			<tr>
+				<th>index no. </th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Count </th>
+				<th>Size </th>
+				<th>first</th>
+				<th>last</th>
+				<th>buttoon 1</th>
+				<th>buttoon 1</th>
+			</tr>
+			
+			<tr th:each="s,normalVariable : ${stu}">
+				<td th:text="${normalVariable.index}"></td>
+				<td th:text="${s.name}"></td>
+				<td th:text="${s.age}"></td>
+				<td th:text="${normalVariable.count}"></td>
+				<td th:text="${normalVariable.size}"></td>
+				<td th:text="${normalVariable.first}"></td>
+				<td th:text="${normalVariable.last}"></td>
+				<td th:text="${normalVariable.odd}"><button></button></td>
+				
+								<td th:text="${normalVariable.even}"><button>deleet</button></td>
+				
+			</tr>
+		</table>
+	</body>
+</html>
