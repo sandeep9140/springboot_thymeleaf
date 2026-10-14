@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+	<head>
+		<title>hello welcome</title>
+	</head>
+	
+	<body>
+		<h1>this my student page</h1>
+		<table>
+			<tr>
+				
+				<th>Name</th>
+				<th>role</th>
+				
+			</tr>
+			
+			<tr th:each="s : ${emp}">
+				
+				<td  th:style="${s.role=='admin' ? 'color:red' : 'color:yellow'}" th:text="${s.name}"></td>
+				<td  th:text="${s.role}"></td>
+			</tr>
+			
+			
+		</table>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+	<head>
+		<title>hello welcome</title>
+	</head>
+	
+	<body>
+		<h1>this my student page</h1>
+		<table>
+			<tr>
+				
+				<th>Name</th>
+				<th>role</th>
+				
+			</tr>
+			
+			<tr th:each="s : ${emp}">
+				
+				<td th:text="${s.name}"></td>
+				<td th:text="${s.role}"></td>
+				<td>
+					<div th:switch="${s.role}">
+						
+						<span th:case="'admin'">
+						    Admin Dashboard
+						</span>
+
+						<span th:case="'user'">
+						    User Dashboard
+						</span>
+
+						<span th:case="'sadmin'">
+						    Super Admin Dashboard
+						</span>
+
+						<span th:case="*">
+						    Unknown Role
+						</span>
+					</div>
+				</td>
+			</tr>
+			
+			
+		</table>
+	</body>
+</html>
