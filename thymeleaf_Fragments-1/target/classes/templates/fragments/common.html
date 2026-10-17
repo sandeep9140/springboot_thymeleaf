@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.thymeleaf.org">
+	<head>
+		<title>fragments</title>
+	</head>
+	<body>
+		
+		<div th:fragment="header" style="height: 200px; width: 100%; background-color:lightpink; border: 10px solid black; text-align: center; ">
+			<ul>
+				<li><a th:href="@{/}">Home</a></li>
+				<li><a th:href="@{/about}">about</a></li>
+				<li><a th:href="@{/}">service</a></li>
+				<li><a th:href="@{/contact}">contect</a></li>
+				<li><a th:href="@{/}">offers</a></li>
+			</ul>
+		</div>
+		
+		
+		<div th:fragment="footer" style="height: 100px; width: 100%; background-color:black; border: 10px solid black; text-align: center;  color: white;">
+			<h1>@Copy snsffsjvsnsnfncknscknacs</h1>
+		</div>
+
+		
+	</body>
+</html>
